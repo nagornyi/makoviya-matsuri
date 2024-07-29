@@ -1,9 +1,9 @@
 # Using official python runtime base image
-FROM python:2.7
+FROM python:3.9
 
 LABEL Version 1.0
 
-MAINTAINER kalise <https://github.com/kalise/>
+LABEL maintainer="kalise <https://github.com/kalise/>"
 
 # By default, the app uses an internal sqlite db
 # Use env variable to force an external SQL engine, e.g. MySQL
@@ -28,7 +28,7 @@ ADD . /app
 VOLUME ["/app/data", "/app/seeds", "/app/logs"]
 
 # Expose the port server listen to
-EXPOSE 5000
+EXPOSE 8000
 
 # Define command to be run when launching the container
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
